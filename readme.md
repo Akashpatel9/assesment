@@ -1,81 +1,77 @@
+### Postman Collection
+
+You can access the complete Postman collection [here](https://api.postman.com/collections/36422499-f203e658-c399-4726-9afd-2c940ff22a79?access_key=PMAT-01J9KPQXFTD42HHKY5Y70WSFWB).
 
 
-# Task Management API
 
-## Overview
-A Task Management API with user authentication and task management features.
+### API Documentation
 
-## Environment Variables
-- `DB_URL`: MongoDB connection string
-- `PORT`: Server port (default: 3000)
-- `JWT_SECRET`: Secret key for JWT
+#### 1. Signup
+- **Endpoint:** `POST /user/signup`
+- **Request Body:**
+```json
+{
+    "username": "akash",
+    "email": "akashsp@gmail.com",
+    "password": "akash@123"
+}
+```
+- **URL:** `https://assesment-1-t29e.onrender.com/user/signup`
 
-## API Endpoints
+#### 2. Signin
+- **Endpoint:** `POST /user/signin`
+- **Request Body:**
+```json
+{
+    "email": "akashsp@gmail.com",
+    "password": "akash@123"
+}
+```
+- **URL:** `https://assesment-1-t29e.onrender.com/user/signin`
 
-### User Authentication
-- **POST /user/signup**
-  - Create a new user account.
-  - **Body:**
-    ```json
-    {
-      "username": "string",
-      "email": "string",
-      "password": "string"
-    }
-    ```
+#### 3. Get All Tasks
+- **Endpoint:** `GET /tasks`
+- **Authorization:** Bearer Token
+- **Query Parameters:** `status`, `dueDate`, `page`, `limit`
+- **URL:** `https://assesment-1-t29e.onrender.com/tasks?status&dueDate=&page=1&limit=10`
 
-- **POST /user/signin**
-  - Log in an existing user and generate a JWT token.
-  - **Body:**
-    ```json
-    {
-      "email": "string",
-      "password": "string"
-    }
-    ```
+#### 4. Add Task
+- **Endpoint:** `POST /tasks`
+- **Authorization:** Bearer Token
+- **Request Body:**
+```json
+{
+    "title": "hee",
+    "description": "hee how are you",
+    "dueDate": "2024-10-10",
+    "status": "pending"
+}
+```
+- **URL:** `https://assesment-1-t29e.onrender.com/tasks`
 
-### Task Management
-- **POST /tasks**
-  - Create a new task.
-  - **Body:**
-    ```json
-    {
-      "title": "string",
-      "description": "string",
-      "dueDate": "YYYY-MM-DD",
-      "status": "Pending/Completed"
-    }
-    ```
+#### 5. Get Task by ID
+- **Endpoint:** `GET /tasks/{taskId}`
+- **Authorization:** Bearer Token
+- **URL:** `https://assesment-1-t29e.onrender.com/tasks/{taskId}`
 
-- **GET /tasks**
-  - List all tasks for the authenticated user.
-  - **Query Parameters:**
-    - `status` (optional)
-    - `dueDate` (optional)
-    - `page` (optional, default: 1)
-    - `limit` (optional, default: 10)
+#### 6. Update Task
+- **Endpoint:** `PUT /tasks/{taskId}`
+- **Authorization:** Bearer Token
+- **Request Body:**
+```json
+{
+    "title": "foodeeeeeeeeeee",
+    "description": "hee how are you",
+    "dueDate": "2024-10-10",
+    "status": "completed"
+}
+```
+- **URL:** `https://assesment-1-t29e.onrender.com/tasks/{taskId}`
 
-- **GET /tasks/:id**
-  - Fetch a specific task by its ID.
+#### 7. Delete Task
+- **Endpoint:** `DELETE /tasks/{taskId}`
+- **Authorization:** Bearer Token
+- **URL:** `https://assesment-1-t29e.onrender.com/tasks/{taskId}`
 
-- **PUT /tasks/:id**
-  - Update a task's details.
-  - **Body:**
-    ```json
-    {
-      "title": "string",
-      "description": "string",
-      "dueDate": "YYYY-MM-DD",
-      "status": "Pending/Completed"
-    }
-    ```
 
-- **DELETE /tasks/:id**
-  - Delete a task by its ID.
 
-## Postman Collection
-You can import the following Postman collection to test the API endpoints:
-
-[Postman Collection](https://api.postman.com/collections/36422499-213d0121-d660-4779-93af-38363a51cab6?access_key=PMAT-01J9KMGT3XGZ9784WADCBDCKFT)
-
----
