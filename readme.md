@@ -1,29 +1,9 @@
+
+
 # Task Management API
 
 ## Overview
-A simple Task Management API that provides user authentication and task management functionalities.
-
-## Features
-1. **User Authentication & Authorization:**
-   - JWT-based authentication.
-   - Endpoints to create and log in users.
-
-2. **Task Management:**
-   - CRUD operations for tasks.
-   - Filtering tasks by status and due date.
-
-3. **Security Considerations:**
-   - Ensure only task owners can manage their tasks.
-   - Input validation for all API requests.
-
-4. **Error Handling & Logging:**
-   - Clear error messages for invalid requests.
-
-5. **Database:**
-   - MongoDB for data storage.
-
-6. **Deployment:**
-   - Deployed on AWS (or specify your chosen platform).
+A Task Management API with user authentication and task management features.
 
 ## Environment Variables
 - `DB_URL`: MongoDB connection string
@@ -94,4 +74,8 @@ A simple Task Management API that provides user authentication and task manageme
   - Delete a task by its ID.
 
 ## Postman Collection
-You can import the provided Postman collection to test the API endpoints.
+You can import the following Postman collection to test the API endpoints:
+
+[Postman Collection](https://api.postman.com/collections/36422499-213d0121-d660-4779-93af-38363a51cab6?access_key=PMAT-01J9KMGT3XGZ9784WADCBDCKFT)
+
+---
