@@ -25,10 +25,10 @@ app.use("/user",userRouter)
 app.use("/tasks",taskRouter)
 
 
-// // test route
-// app.get('/', (req, res) => {
-//     res.send("Hello World!")
-// })
+// test route
+app.get('/', (req, res) => {
+    res.send("Hello World!")
+})
 
 
 // undefined route
